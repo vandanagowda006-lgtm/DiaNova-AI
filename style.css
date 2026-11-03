@@ -1,0 +1,442 @@
+/* ==========================================================
+   DiaNova AI — Wellness Journal
+   Readability + accessibility refresh
+   Palette: sage / ivory / peach
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+:root {
+    --primary: #547A61;
+    --primary-dark: #355642;
+    --sage: #DCE9DD;
+    --mint: #EDF4EB;
+    --peach: #F4C7AE;
+    --cream: #FAF8F2;
+    --white: #FFFFFF;
+    --text: #263C30;
+    --body: #405548;
+    --muted: #65766A;
+    --border: #DDE5DA;
+}
+
+/* ---------- Global readability ---------- */
+
+html, body, .stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+[data-testid="stMainBlockContainer"] {
+    background: var(--cream) !important;
+    color: var(--text) !important;
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+.block-container {
+    max-width: 1420px;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+.stApp p, .stApp label, .stApp li,
+.stApp [data-testid="stMarkdownContainer"],
+.stApp [data-testid="stCaptionContainer"] {
+    color: var(--body);
+    font-family: 'DM Sans', sans-serif !important;
+    line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6,
+.stApp h1, .stApp h2, .stApp h3 {
+    color: var(--text) !important;
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;
+}
+
+small, .small-muted, [data-testid="stCaptionContainer"] {
+    color: var(--muted) !important;
+}
+
+/* ---------- Sidebar ---------- */
+
+section[data-testid="stSidebar"],
+section[data-testid="stSidebar"] > div {
+    background: #EAF0E7 !important;
+    border-right: 1px solid #DCE5D9;
+}
+
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+    color: #355642 !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stRadio"] label {
+    color: #294634 !important;
+    border-radius: 12px;
+    padding: .45rem .65rem;
+    margin: .15rem 0;
+}
+
+section[data-testid="stSidebar"] [data-testid="stRadio"] label:hover {
+    background: #DCE9DD !important;
+}
+
+/* ---------- Buttons ---------- */
+
+.stButton > button,
+.stFormSubmitButton > button,
+.stDownloadButton > button {
+    background: var(--primary) !important;
+    color: #FFFFFF !important;
+    border: 1px solid var(--primary) !important;
+    border-radius: 24px !important;
+    font-weight: 700 !important;
+    padding: .65rem 1.2rem !important;
+}
+
+.stButton > button *,
+.stFormSubmitButton > button *,
+.stDownloadButton > button * {
+    color: #FFFFFF !important;
+}
+
+.stButton > button:hover,
+.stFormSubmitButton > button:hover,
+.stDownloadButton > button:hover {
+    background: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    transform: translateY(-1px);
+}
+
+/* ---------- Form labels and controls ---------- */
+
+.stTextInput label, .stNumberInput label,
+.stSelectbox label, .stMultiSelect label,
+.stSlider label, .stTextArea label,
+.stDateInput label, .stTimeInput label {
+    color: #294634 !important;
+    font-weight: 600 !important;
+}
+
+.stTextInput input,
+.stNumberInput input,
+.stTextArea textarea,
+.stDateInput input,
+.stTimeInput input {
+    background: #FFFFFF !important;
+    color: #263C30 !important;
+    -webkit-text-fill-color: #263C30 !important;
+    border: 1px solid #CBD9CA !important;
+    border-radius: 12px !important;
+}
+
+.stSelectbox div[data-baseweb="select"],
+.stMultiSelect div[data-baseweb="select"] {
+    background: #FFFFFF !important;
+    color: #263C30 !important;
+    border-radius: 12px !important;
+}
+
+.stSelectbox div[data-baseweb="select"] *,
+.stMultiSelect div[data-baseweb="select"] * {
+    color: #263C30 !important;
+}
+
+[data-baseweb="popover"],
+[data-baseweb="menu"],
+[role="listbox"] {
+    background: #FFFFFF !important;
+}
+
+[role="option"] {
+    background: #FFFFFF !important;
+    color: #263C30 !important;
+}
+
+[role="option"]:hover {
+    background: #EAF0E7 !important;
+}
+
+input, textarea {
+    caret-color: #355642 !important;
+}
+
+/* ---------- File uploader ---------- */
+
+[data-testid="stFileUploader"] {
+    background: #F0F5ED !important;
+    border: 1.5px dashed #91AC94 !important;
+    border-radius: 20px !important;
+    padding: 16px !important;
+}
+
+[data-testid="stFileUploader"] section,
+[data-testid="stFileUploader"] section > div {
+    background: transparent !important;
+}
+
+[data-testid="stFileUploader"] button {
+    background: #FFFFFF !important;
+    color: #355642 !important;
+    border: 1px solid #A8BDA8 !important;
+    border-radius: 10px !important;
+}
+
+[data-testid="stFileUploader"] button * {
+    color: #355642 !important;
+}
+
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] span,
+[data-testid="stFileUploader"] p {
+    color: #526C59 !important;
+}
+
+/* ---------- Code blocks / required-column list ---------- */
+
+[data-testid="stCodeBlock"],
+[data-testid="stCode"],
+.stCodeBlock {
+    background: #EEF3EA !important;
+    border: 1px solid #D8E3D5 !important;
+    border-radius: 14px !important;
+}
+
+[data-testid="stCodeBlock"] pre,
+[data-testid="stCodeBlock"] code,
+[data-testid="stCode"] pre,
+[data-testid="stCode"] code,
+.stCodeBlock pre,
+.stCodeBlock code {
+    background: #EEF3EA !important;
+    color: #294634 !important;
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+}
+
+/* ---------- Metrics and cards ---------- */
+
+[data-testid="stMetric"] {
+    background: #FFFFFF !important;
+    border: 1px solid #E3E9DF !important;
+    border-radius: 20px !important;
+    padding: 18px 20px !important;
+    box-shadow: 0 7px 22px rgba(45, 68, 49, .045);
+}
+
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] * {
+    color: #65766A !important;
+}
+
+[data-testid="stMetricValue"],
+[data-testid="stMetricValue"] * {
+    color: #355642 !important;
+    font-weight: 800 !important;
+}
+
+.dianova-card, .pin-card {
+    background: #FFFFFF;
+    color: #405548;
+    border: 1px solid #E3E9DF;
+    border-radius: 22px;
+    padding: 23px;
+    box-shadow: 0 8px 24px rgba(45, 68, 49, .045);
+}
+
+.pin-card h3, .dianova-card h3 {
+    color: #294634 !important;
+}
+
+.pin-card p, .dianova-card p {
+    color: #526C59 !important;
+}
+
+.pin-peach { background: #F8E5D9 !important; }
+.pin-sage { background: #E3EEE1 !important; }
+.pin-butter { background: #F6EFCF !important; }
+.pin-lilac { background: #EEE8F1 !important; }
+
+/* ---------- Hero and journal elements ---------- */
+
+.journal-hero, .hero-section {
+    background: linear-gradient(115deg, #DCEBDD 0%, #F7EDDA 58%, #F5D9C8 100%) !important;
+    border: 1px solid #E8E6D9 !important;
+    border-radius: 30px !important;
+    padding: 38px 42px !important;
+    color: #294634 !important;
+}
+
+.journal-title, .hero-section h1 {
+    color: #294634 !important;
+    font-family: 'Playfair Display', serif !important;
+}
+
+.journal-copy, .hero-section p {
+    color: #405F49 !important;
+}
+
+.eyebrow, .section-kicker {
+    color: #547A61 !important;
+}
+
+.pill {
+    color: #355642 !important;
+    background: #FFFFFFB8 !important;
+    border: 1px solid #D8E2D5 !important;
+}
+
+.note-card {
+    background: #F1F4EC !important;
+    color: #405548 !important;
+    border-left: 4px solid #78977B !important;
+    border-radius: 5px 16px 16px 5px;
+    padding: 16px 20px;
+}
+
+.note-card b, .note-card strong {
+    color: #294634 !important;
+}
+
+/* ---------- Charts, tables, tabs, expanders ---------- */
+
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+    background: #FFFFFF !important;
+    border: 1px solid #E3E9DF !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+}
+
+[data-testid="stDataFrame"] *,
+[data-testid="stTable"] * {
+    color: #263C30;
+}
+
+button[data-baseweb="tab"] {
+    color: #526C59 !important;
+    font-weight: 700 !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: #294634 !important;
+}
+
+[data-testid="stExpander"] {
+    background: #FFFFFF !important;
+    border: 1px solid #E3E9DF !important;
+    border-radius: 15px !important;
+}
+
+[data-testid="stAlert"] {
+    border-radius: 14px !important;
+}
+
+hr { border-color: #E1E8DE !important; }
+
+/* ---------- Streamlit top toolbar ---------- */
+
+[data-testid="stHeader"] {
+    background: rgba(250, 248, 242, .96) !important;
+}
+
+[data-testid="stToolbar"] {
+    color: #355642 !important;
+}
+
+/* ---------- Footer ---------- */
+
+.dianova-footer {
+    text-align: center;
+    padding: 30px 10px;
+    color: #718074 !important;
+    font-size: 12px;
+}
+
+/* ---------- Scrollbar and responsive ---------- */
+
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: #FAF8F2; }
+::-webkit-scrollbar-thumb { background: #A8BDA8; border-radius: 10px; }
+
+@media (max-width: 768px) {
+    .block-container { padding: 1rem; }
+    .journal-hero, .hero-section { padding: 25px !important; }
+    .journal-title { font-size: 34px !important; }
+}
+
+
+/* ==========================================================
+   DIANOVA COMPANION — CHAT READABILITY FIX
+========================================================== */
+
+/* Chat input area */
+[data-testid="stChatInput"],
+[data-testid="stChatInput"] > div,
+[data-testid="stBottom"] {
+    background: #FAF8F2 !important;
+}
+
+/* Chat input box and typed text */
+[data-testid="stChatInput"] textarea,
+[data-testid="stChatInput"] [data-baseweb="textarea"],
+[data-testid="stChatInput"] [data-baseweb="textarea"] > div {
+    background: #FFFFFF !important;
+    color: #263C30 !important;
+    -webkit-text-fill-color: #263C30 !important;
+    caret-color: #355642 !important;
+    border: 1.5px solid #A8BDA8 !important;
+    border-radius: 14px !important;
+}
+
+/* Placeholder text */
+[data-testid="stChatInput"] textarea::placeholder {
+    color: #829084 !important;
+    -webkit-text-fill-color: #829084 !important;
+    opacity: 1 !important;
+}
+
+/* Chat message bubbles */
+[data-testid="stChatMessage"] {
+    background: #FFFFFF !important;
+    border: 1px solid #E3E9DF !important;
+    border-radius: 16px !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+}
+
+/* Chat message text */
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] span,
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"],
+[data-testid="stChatMessage"] li {
+    color: #263C30 !important;
+    -webkit-text-fill-color: #263C30 !important;
+}
+
+/* Chat message headings */
+[data-testid="stChatMessage"] h1,
+[data-testid="stChatMessage"] h2,
+[data-testid="stChatMessage"] h3 {
+    color: #294634 !important;
+}
+
+/* Chat input focus */
+[data-testid="stChatInput"] textarea:focus {
+    border-color: #547A61 !important;
+    box-shadow: 0 0 0 2px rgba(84, 122, 97, 0.15) !important;
+}
+
+/* Chat send button */
+[data-testid="stChatInput"] button {
+    background: #547A61 !important;
+    color: #FFFFFF !important;
+    border-radius: 12px !important;
+}
+
+[data-testid="stChatInput"] button svg {
+    fill: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
