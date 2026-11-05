@@ -146,4 +146,15 @@ DiaNova AI is an educational and informational project. Machine Learning predict
 *Built with Python | Powered by Intelligence | Designed for Better Health*
 
 </div>
+<div align="center">
+
+### 🌐 Try DiaNova AI
+
+🚀 **[Launch DiaNova AI Application](http://localhost:8501)**
+
+*Click to explore the interactive diabetes prediction and personalized wellness platform.*
+
+</div>
+
+---
 
